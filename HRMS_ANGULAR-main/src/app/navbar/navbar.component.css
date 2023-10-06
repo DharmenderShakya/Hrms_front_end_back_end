@@ -1,0 +1,16 @@
+
+
+.navbar-brand{
+    width: 310px;
+    height: 53px;
+    padding-left: 6px;
+    display: block;
+    position: relative;
+}
+.span{
+    margin-left: 26px;
+    margin-top: 4px;
+}
+.navbar{
+    height: 53px;
+}

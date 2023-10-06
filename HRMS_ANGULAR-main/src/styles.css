@@ -1,0 +1,7 @@
+body { padding-top: 60px; }
+.toaster-postition{
+    top: 70px;
+    left: 110px;
+    margin-top: 5px;
+    color: red;
+}

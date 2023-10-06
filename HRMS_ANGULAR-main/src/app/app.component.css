@@ -1,0 +1,21 @@
+
+main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
+.black-border{
+    border: 1px solid black;
+}
+
+/* Adjust content margin when the sidebar is active */
+.display-area{
+    position: absolute;
+    /* left: 250px;  */
+    width: 100%;
+}
+.display-area-shrink{
+    width: calc(100% - 250px);
+    left: 250px;
+}

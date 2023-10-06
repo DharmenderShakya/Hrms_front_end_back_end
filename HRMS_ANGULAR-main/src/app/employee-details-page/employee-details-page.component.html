@@ -1,0 +1,67 @@
+
+<p class="w-auto text-light" style="background-color: rgba(red, green, blue);">Employee Address</p>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <table class="table table-sm">
+            <thead class="thead-dark">
+                <th scope="col">Address:</th>
+            </thead>
+            <tbody >
+                <tr>
+                    <td>
+                        <small>Hno.</small>
+                    </td>
+                    <td>{{employee.address.hno}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>city</small>
+                    </td>
+                    <td>{{employee.address.state}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>State</small>
+                    </td>
+                    <td>{{employee.address.city}}</td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <small>pincode</small>
+                    </td>
+                    {{employee.address.pincode}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <table class="table table-sm">
+            <thead class="thead-dark">
+                <th scope="col">Quelification:</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <small>passingYear</small>
+                    </td>
+                    <td>{{employee.quelification.passingYear}}</td>
+                </tr>
+                <tr>
+
+                    <td><small>HighSchool</small></td>
+                    <td>{{employee.quelification.highSchool}}</td>
+                </tr>
+
+                <tr>
+                    <td><small>Diploma </small></td>
+                    <td>{{employee.quelification.diploma}}</td>
+                </tr>
+                <tr>
+                    <td><small>Degree</small></td>
+                    <td>{{employee.quelification.degree}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

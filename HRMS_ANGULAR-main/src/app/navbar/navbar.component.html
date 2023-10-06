@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand navbar-dark bg-secondary"> 
+    <div class="navbar-brand bg-primary ">
+      <h3 class="span">HRM SYSTEM</h3>
+ <!-- <span class="span">HRM System</span> -->
+</div>
+  <div class="side-nav-button p-2 text-light"><span><i class="fa-solid fa-bars" style="color: #0d6efd;font-size: 30px;" (click)="toggleSidebar()"></i></span></div>
+  <!-- <div class="side-nav-button p-2 text-light"><span><button (click)="toggleSidebar()"><i class="fa-solid fa-bars" style="color: #0d6efd;"></i></button></span></div> -->
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <!-- <span><i class="fa-solid fa-user" style="color: #4d588f;"></i></span> -->
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span><i class="fa-solid fa-user" style="color: #4d588f;"></i></span>
+              <span class="glyphicon glyphicon-user"></span> User
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" routerLink="/login"><span></span> Login</a></li>
+              <li><a class="dropdown-item" routerLink="/deshboard"><span></span> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>

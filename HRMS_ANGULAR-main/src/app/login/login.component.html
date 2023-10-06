@@ -1,0 +1,34 @@
+<div class="main">
+    <div class="container-fluid">
+          <div class="card my-auto shadow col-md-6">
+              <div class="card-body px-6">
+                  <div class="text-center">
+                  </div>
+                  <div class="text-center de">
+                    <h2 class="h2"><span class="text-success">H</span>RM</h2> 
+                       <span class="font" style="font-size: 18px;"><strong><em>solution</em></strong></span>
+                  </div>
+                  <form (ngSubmit)="formSubmit()" >
+                      <div class="form-group">
+                        <label for="name">UserName</label>
+                          <input type="text" id="name" placeholder="name" class="form-control" 
+                            [(ngModel)]="loginData.userName"  name="name" />
+                      </div>
+                      <div class="form-group mt-3">
+                        <label for="password">Password</label>
+                          <input type="password" id="password" placeholder="Password" class="form-control"
+                          [(ngModel)]="loginData.password" name="password" />
+                      </div>
+                      <div class="form-group mt-3">
+                      <input type="submit" class="btn btn-success w-100 form-control" value="LOGIN">
+                    </div>
+                    <div class="text-right forgot mt-3 ml-5">
+                      <a routerLink="../forgot-password" class="text-decoration-none">Forgot Password</a>
+                    </div>
+    
+                  </form>
+              </div>
+          </div>
+          </div>
+        </div>
+       

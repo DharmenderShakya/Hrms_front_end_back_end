@@ -1,0 +1,164 @@
+
+<div class="container">
+  <h2 class="h2">Employee Report</h2>
+<table class="table table-bordered">
+    <thead class="text-light bg-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">phone_no</th>
+        <th scope="col">Department</th>
+        <!-- <th scope="col">Working On</th> -->
+        <th scope="col">Profile</th>
+        <!-- <th scope="col">Salary</th> -->
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of list" scope="row">
+        <td>{{emp.id}}</td>
+        <td><a routerLink="/details/{{emp.id}}">{{emp.firstName}}</a></td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.phone_no}}</td>
+        <td>{{emp.department}}</td>
+        <!-- <td>{{emp.work}}</td> -->
+        <td>{{emp.profile}}</td>
+        <!-- <td><a href="">{{emp.address.id}}</a></td>
+        <td><a href="">{{emp.quelification.id}}</a></td> -->
+
+        <!-- <td>{{emp.leave.id}}</td> -->
+        <!-- <td>{{emp.salary.salary}}</td> -->
+       
+        <td  class="d-flex">
+     <button type="button" class="btn left  btn-outline-primary btn-sm" (click)="openUpdateModal(emp.id)">Update</button>
+     <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteEmployee(emp.id)">Delete</button>
+    </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="controls">
+    <button class="btn btn-success btn-sm" (click)="previousPage()" style="font-size: 10px;padding: 0px;font-family: 'Times New Roman', Times, serif; ">
+      Previous</button>
+    <button class="btn btn-success btn-sm" (click)="nextPage()" style="font-size: 10px;padding: 0px;font-family: 'Times New Roman', Times, serif;">Next
+    </button>
+  </div>
+  </div>
+  
+
+  
+  <div bsModal #childModal="bs-modal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+          <button type="button" class="btn-close btn-close-red"  aria-label="Close" (click)="closeSaveModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="formValue"  (ngSubmit)="getOnSubmit(formValue)">
+        <div class="modal-body row">
+                <div class="form-group col-md-6" *ngIf="update">
+                  <label for="CustomerId" class="mt-3">Employee Id</label>
+                  <input type="text" formControlName="id" class="form-control mt-3" id="CustomerId" aria-describedby="emailHelp" placeholder="Enter CustomerId">
+                </div>
+                
+                <div class="form-group col-md-6">
+                  <label for="cutomer name" class="mt-3">firstName</label>
+                  <input type="text" formControlName="firstName" class="form-control mt-3" id="cutomer name" placeholder="Employee Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Email Id" class="mt-3">LastName </label>
+                    <input type="Email" id="Email Id" formControlName="lastName" class="form-control mt-3" placeholder="LastName">
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="Phone No." class="mt-3">Phone No</label>
+                    <input type="text" id="Phone No." formControlName="phone_no" class="form-control mt-3" placeholder="Phone No.">
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="Email" class="mt-3">Email</label>
+                    <input type="text" id="Email" formControlName="email" class="form-control mt-3" placeholder="Email_Id">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="department" class="mt-3">DepartMent</label>
+                  <input type="text" id="department" formControlName="department" class="form-control mt-3" placeholder="DepartMent">
+              </div>
+
+                <div class="form-group col-md-6">
+                  <label for="profile" class="mt-3">Profile</label>
+                  <input type="text" id="profile" formControlName="profile" class="form-control mt-3" placeholder="Profile">
+              </div>
+                <div class="row" formArrayName="address" >
+                <!-- <h4 >Employee Address:</h4> -->
+                  <span class="mt-4">Employee Address:</span>
+                <div class="form-group col-md-6" >
+                  <label for="Hno." class="mt-3">Hno.</label>
+                  <input type="text" id="Hno." formControlName="hno" class="form-control mt-3" placeholder="House No.">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="city" class="mt-3">City</label>
+                <input type="text" id="city" formControlName="city" class="form-control mt-3" placeholder="City">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="State" class="mt-3">State</label>
+              <input type="text" id="State" formControlName="state" class="form-control mt-3" placeholder="State">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="pincode" class="mt-3">pincode</label>
+            <input type="number" id="pincode" formControlName="pincode" class="form-control mt-3" placeholder="pincode">
+     
+        </div>
+        </div>
+        <div class="row" formArrayName="quelification" >
+        <!-- <h4 class="mt-4">Employee Quelification:</h4> -->
+        <span class="mt-4">Employee Quelification:</span>
+                <div class="form-group col-md-6" >
+                  <label for="Hno." class="mt-3">passingYear:</label>
+                  <input type="text" id="Hno." formControlName="passingYear" class="form-control mt-3" placeholder="passingYear.">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="city" class="mt-3">HighSchool:</label>
+                <input type="text" id="city" formControlName="highSchool" class="form-control mt-3" placeholder="HighSchool">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="State" class="mt-3">Diploma:</label>
+              <input type="text" id="State" formControlName="diploma" class="form-control mt-3" placeholder="Diploma">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="pincode" class="mt-3">Degree:</label>
+            <input type="text" id="pincode" formControlName="degree" class="form-control mt-3" placeholder="Degree">
+     
+          </div>
+        </div>
+        <div class="row" formArrayName="UploadFile">
+        <div class="mb-3 col-md-6 mt-3">
+          <label for="formFileSm" class="form-label"><h4>Upload Image:</h4></label>
+          <input class="form-control form-control-sm" formControlName="file" id="formFileSm" type="file" (change)="onChange($event)">
+          <button (click)="uploadFile()" class="btn btn-success">Upload</button>
+        </div>
+      </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-danger btn-sm" >Cancel</button>
+                <button type="submit" class="btn btn-outline-success btn-sm" *ngIf="saves" (click)="saveEmp(formValue.value)">Add</button>
+                <button type="submit" class="btn btn-outline-success btn-sm" *ngIf="update" (click)="updateEmployee(asd,formValue.value)" >Update</button>
+    
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Update Modal -->

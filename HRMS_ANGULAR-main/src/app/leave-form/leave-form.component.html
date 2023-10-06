@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white title">
+    <div class="container">
+        <h2 class="navbar-brand h2">Add Leave</h2>
+        <!-- You can add additional elements here -->
+    </div>
+</nav>
+<div class="container">
+  <form class="row margin g-3 my-1 bg-light text-dark w-30 p-2">
+    <div class="col-md-6">
+      <label for="inputFirstName" class="form-label">Employee Name</label>
+      <input type="text" class="form-control" id="inputFirstName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Employee Id</label>
+      <input type="text" class="form-control" id="inputLastName">
+    </div>
+    <div class="col-md-6">
+        <label for="leave-type" class="form-label">Leave Type</label>
+        <select id="leave-type" name="leave-type" class="form-control" required>
+            <option value="sick">Sick Leave</option>
+            <option value="vacation">Vacation Leave</option>
+            <option value="personal">Personal Leave</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputPhone" class="form-label">Reason</label>
+        <input type="text" class="form-control" id="inputPhone">
+      </div>
+      <div class="col-md-6">
+        <label for="inputDepartment" class="form-label">Start Date</label>
+        <input type="text" class="form-control" id="inputDepartment">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">End Date</label>
+        <input type="email" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputProfile" class="form-label">Description</label>
+        <input type="password" class="form-control" id="inputProfile">
+      </div>
+    <div class="col-12 mt-4">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+  
